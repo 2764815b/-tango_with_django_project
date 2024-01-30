@@ -3,6 +3,20 @@
 
 <head>
     <title>Rango</title>
+    <style>
+        html * {
+            font-family: "Courier New", monospace;
+            color: white;
+            background-color: thistle;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,11 +30,14 @@
             {% endfor %}
         </ul>
         {% else %}
-        <strong>No pages currently in category.</strong>
+        <strong>No pages currently in category.</strong><br />
         {% endif %}
+        <a href='/rango/category/{{ category.slug }}/add_page/'>Add Page</a><br />
+
         {% else %}
         The specified category does not exist.
         {% endif %}
+
         <a href="{% url 'index' %}">Back to Index</a><br />
     </div>
 </body>
