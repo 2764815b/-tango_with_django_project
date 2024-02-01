@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+
+<head>
+    <title>
+        Rango -
+        {% block title_block %}
+        How to Tango with Django!
+        {% endblock %}
+    </title>
+    <style>
+        html * {
+            font-family: "Courier New", monospace;
+            color: white;
+            background-color: thistle;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        {% block body_block %}
+        {% endblock %}
+    </div>
+    <hr />
+    <div>
+        <ul>
+            <li><a href="{% url 'rango:add_category' %}">Add a New Category</a></li>
+            <li><a href="{% url 'rango:about' %}">About</a></li>
+            <li><a href="{% url 'rango:index' %}">Index</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
